@@ -1,0 +1,22 @@
+.login-contaienr{
+    background-color: yellowgreen;
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-half{
+    background-color: violet;
+}
+
+.right-half{
+    background-color: brown;
+}
+
+.login-heading{
+    background-color: turquoise;
+}
+
+.login-form{
+    background-color: chartreuse;
+}
