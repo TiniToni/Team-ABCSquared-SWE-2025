@@ -1,0 +1,27 @@
+Naming Convention:
+
+Use snake_case when making names. Things such as variables or functions should be lowercase.
+Classes should be capitalized at the first word. Constants should be in all caps.
+
+Make sure names are descriptive to minimize comment length. Have them be self-explanatory.
+
+Comments:
+
+Use comments when they are absolutely necessary for someone to be able to understand the code or
+understand how to work with the code. --> general case
+
+Inline comments should be short and uses #
+
+Block comments should be used at the top of the file to explain what it does. It should be
+formatted like this:
+
+'''
+Author: the person who made changes
+Date: the date it was commited/pushed
+Description: what the change was AND what the file does
+'''
+
+Try to avoid using block comments unless absolutely necessary
+
+If a process is used more than once, make it into a function.
+Try to make your code modular if possible.
