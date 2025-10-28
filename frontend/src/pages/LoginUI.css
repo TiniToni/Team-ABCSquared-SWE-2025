@@ -1,22 +1,108 @@
-.login-contaienr{
-    background-color: yellowgreen;
-    display: inline-block;
-    justify-content: space-between;
-    align-items: center;
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #fffaf2; 
+  font-family: "Poppins", sans-serif;
 }
 
-.left-half{
-    background-color: violet;
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.right-half{
-    background-color: brown;
+.form-container {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  text-align: center;
 }
 
-.login-heading{
-    background-color: turquoise;
+.welcome-title {
+  font-size: 2rem;
+  color: #4e342e;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-.login-form{
-    background-color: chartreuse;
+.welcome-text {
+  color: #6d4c41; 
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.3rem;
+  color: #4e342e;
+  font-weight: 500;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #bca89f;
+  background-color: #fffdf9;
+  color: #3e2723; 
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-form input::placeholder {
+  color: #9c7e70; 
+  opacity: 1;
+}
+
+.login-form input:focus {
+  border-color: #6d4c41;
+  box-shadow: 0 0 0 2px rgba(109, 76, 65, 0.15);
+}
+
+.sign-in-btn {
+  background-color: #3e2723;
+  color: white;
+  padding: 0.7rem;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sign-in-btn:hover {
+  background-color: #5d4037;
+}
+
+.create-account-btn {
+  margin-top: 1.5rem;
+  background-color: #3e2723;
+  color: white;
+  padding: 0.7rem;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.forgot-link {
+  display: block;
+  margin-top: 0.5rem;
+  color: #6d4c41;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.error-text {
+  color: #c62828;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
