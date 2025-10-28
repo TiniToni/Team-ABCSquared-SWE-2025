@@ -1,8 +1,11 @@
 import "./LoginUI.css";
 import { useState } from "react";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import './LoginUI.css';
 =======
+=======
+>>>>>>> Stashed changes
 import { login } from "../Api";
 >>>>>>> Stashed changes
 
@@ -10,6 +13,10 @@ export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+  const [error, setError] = useState("");
+>>>>>>> Stashed changes
 =======
   const [error, setError] = useState("");
 >>>>>>> Stashed changes
@@ -17,9 +24,12 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     console.log("Submitted:", username, password);
     // connect backend later
 =======
+=======
+>>>>>>> Stashed changes
     setError("");
 
     try {
@@ -72,6 +82,7 @@ export default function LoginPage() {
           <button className="create-account-btn">Create Account</button>
         </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         <form className="login-form" onSubmit={handleSubmit}>
           <label>Username:</label>
@@ -91,6 +102,9 @@ export default function LoginPage() {
           <button type="submit">Log In</button>
         </form>
       </div>
+=======
+      </main>
+>>>>>>> Stashed changes
 =======
       </main>
 >>>>>>> Stashed changes
