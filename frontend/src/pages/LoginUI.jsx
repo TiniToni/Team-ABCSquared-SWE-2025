@@ -1,41 +1,19 @@
-import "./LoginUI.css";
 import { useState } from "react";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import './LoginUI.css';
-=======
-=======
->>>>>>> Stashed changes
 import { login } from "../Api";
->>>>>>> Stashed changes
+import "./LoginUI.css";
 
-export default function LoginPage() {
+export default function LoginUI() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
   const [error, setError] = useState("");
->>>>>>> Stashed changes
-=======
-  const [error, setError] = useState("");
->>>>>>> Stashed changes
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    console.log("Submitted:", username, password);
-    // connect backend later
-=======
-=======
->>>>>>> Stashed changes
     setError("");
 
     try {
       const response = await login({ username, password });
       console.log("Login successful:", response.data);
-
       localStorage.setItem("access", response.data.access);
       localStorage.setItem("refresh", response.data.refresh);
       alert("Login successful!");
@@ -43,12 +21,10 @@ export default function LoginPage() {
       console.error("Login error:", err);
       setError("Invalid username or password");
     }
->>>>>>> Stashed changes
   };
 
   return (
     <div className="login-page">
-
       <main className="main-content">
         <div className="form-container">
           <h2 className="welcome-title">Welcome!</h2>
@@ -81,35 +57,7 @@ export default function LoginPage() {
 
           <button className="create-account-btn">Create Account</button>
         </div>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-        <form className="login-form" onSubmit={handleSubmit}>
-          <label>Username:</label>
-          <input 
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-
-          <label>Password:</label>
-          <input 
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <button type="submit">Log In</button>
-        </form>
-      </div>
-=======
       </main>
->>>>>>> Stashed changes
-=======
-      </main>
->>>>>>> Stashed changes
     </div>
   );
-  
-
 }
