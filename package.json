@@ -1,0 +1,25 @@
+{
+  "name": "team-abcsquared-swe-2025",
+  "version": "1.0.0",
+  "description": "Learn to cook, grow your animal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiniToni/Team-ABCSquared-SWE-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TiniToni/Team-ABCSquared-SWE-2025/issues"
+  },
+  "homepage": "https://github.com/TiniToni/Team-ABCSquared-SWE-2025#readme",
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
