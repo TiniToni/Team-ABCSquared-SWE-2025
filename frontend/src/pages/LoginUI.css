@@ -1,108 +1,116 @@
-.login-page {
+.ct-login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #fffaf2; 
-  font-family: "Poppins", sans-serif;
+  background-color: #fff9f2;
+  font-family: "Poppins", "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.form-container {
-  background-color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 360px;
+.ct-login-box {
+  width: 380px;
+  background: #ffffff;
+  padding: 36px 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
   text-align: center;
 }
 
-.welcome-title {
-  font-size: 2rem;
-  color: #4e342e;
+.ct-login-heading {
+  margin: 0;
+  font-size: 1.9rem;
+  color: #5a3310;
   font-weight: 700;
-  margin-bottom: 0.5rem;
 }
 
-.welcome-text {
-  color: #6d4c41; 
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
+.ct-login-subtext {
+  margin-top: 6px;
+  margin-bottom: 20px;
+  color: #8c6239;
 }
 
-.login-form label {
-  display: block;
+.ct-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.ct-label {
   text-align: left;
-  margin-bottom: 0.3rem;
-  color: #4e342e;
-  font-weight: 500;
+  font-weight: 600;
+  color: #5a3310;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
 }
 
-.login-form input {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1rem;
+.ct-input {
+  padding: 12px;
   border-radius: 8px;
-  border: 1px solid #bca89f;
-  background-color: #fffdf9;
-  color: #3e2723; 
+  border: 1px solid #d6bfae;
+  background: #fffefb;
+  color: #3b2f2f;
   font-size: 1rem;
-  outline: none;
 }
 
-.login-form input::placeholder {
-  color: #9c7e70; 
+.ct-input::placeholder {
+  color: #a18b72;
   opacity: 1;
 }
 
-.login-form input:focus {
-  border-color: #6d4c41;
-  box-shadow: 0 0 0 2px rgba(109, 76, 65, 0.15);
-}
-
-.sign-in-btn {
-  background-color: #3e2723;
-  color: white;
-  padding: 0.7rem;
-  width: 100%;
-  border: none;
+.ct-button {
+  padding: 12px;
   border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.sign-in-btn:hover {
-  background-color: #5d4037;
-}
-
-.create-account-btn {
-  margin-top: 1.5rem;
-  background-color: #3e2723;
-  color: white;
-  padding: 0.7rem;
-  width: 100%;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.forgot-link {
-  display: block;
-  margin-top: 0.5rem;
-  color: #6d4c41;
-  text-decoration: underline;
-  font-size: 0.9rem;
+.ct-login-btn {
+  background: #3b2f2f;
+  color: white;
+  margin-top: 6px;
 }
 
-.error-text {
-  color: #c62828;
-  font-weight: 600;
-  margin-bottom: 1rem;
+.ct-create-btn {
+  background: #6d4c41;
+  color: white;
+  width: 140px;
+  margin: 8px auto 0 auto;
 }
+
+.ct-create-section {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ct-create-text {
+  color: #5a3310;
+  margin-bottom: 8px;
+}
+
+.ct-error {
+  color: #b00020;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.ct-success {
+  color: #1b8a3e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .ct-login-box {
+    width: 92%;
+    padding: 20px;
+  }
+}
+
