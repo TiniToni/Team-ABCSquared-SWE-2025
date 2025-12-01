@@ -1,0 +1,91 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #fffaf2;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  color: #4e342e;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-text {
+  color: #6d4c41;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.register-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.3rem;
+  color: #4e342e;
+  font-weight: 500;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #bca89f;
+  background-color: #fffdf9;
+  color: #3e2723;
+  font-size: 1rem;
+}
+
+.register-form input::placeholder {
+  color: #9c7e70;
+}
+
+.sign-up-btn {
+  background-color: #3e2723;
+  color: white;
+  padding: 0.7rem;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.sign-up-btn:hover {
+  background-color: #5d4037;
+}
+
+.login-link {
+  margin-top: 1rem;
+  color: #4e342e;
+  font-size: 0.95rem;
+}
+
+.login-link a {
+  color: #6d4c41;
+  text-decoration: underline;
+}
+
+.error-text {
+  color: #c62828;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.success-text {
+  color: #2e7d32;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
