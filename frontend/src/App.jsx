@@ -1,7 +1,8 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import LoginUI from './pages/LoginUI';
 import CreateAccountUI from "./pages/CreateAccountUI";
-import './App.css'
+import Dashboard from './pages/Dashboard';
+import './App.css';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
 
       {/*routes*/}
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<LoginUI />} />
         <Route path="/register" element={<CreateAccountUI />} />
       </Routes>
