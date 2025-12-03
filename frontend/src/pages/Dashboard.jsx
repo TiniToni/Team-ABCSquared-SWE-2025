@@ -14,7 +14,7 @@ export default function Dashboard() {
 
         <button 
           className="dashboard-start-btn"
-          onClick={() => navigate("/dashboard/main")}
+          onClick={() => navigate("/login")}
         >
           Get Started
         </button>
