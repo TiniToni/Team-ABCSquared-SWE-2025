@@ -33,7 +33,6 @@
    ```
 
 3. **Setup environment variables**
-
 Create a .env file with necessary variables, for example:
    ```
    SECRET_KEY=your_django_secret_key
@@ -41,8 +40,16 @@ Create a .env file with necessary variables, for example:
    ```
 
 4. **Run Dev Server**
-   ```python manage.py migrate
-      python manage.py runserver
+   ```
+   cd backend
+   python manage.py migrate
+   python manage.py runserver
+   ```
+
+5. **Run Front End**
+   ```
+   cd frontend
+   npm run dev
    ```
 
 ## Contributing
