@@ -46,3 +46,15 @@ class QuizSubmission(models.Model):
     user = models.ForeignKey("auth.User", on_delete=models.CASCADE)
     score = models.IntegerField()
     submitted_at = models.DateTimeField(auto_now_add=True)
+
+class LessonQuizMapping(models.Model):
+    """Maps quizzes to units and lessons (e.g., Quiz 1 = Unit 1 Lesson 1)"""
+    quiz = models.OneToOneField(Quiz, on_delete=models.CASCADE)
+    unit = models.IntegerField(default=1)  # which unit (1, 2, 3, etc.)
+    lesson = models.IntegerField(default=1)  # which lesson within the unit (1-9)
+    
+    class Meta:
+        unique_together = ('unit', 'lesson')
+    
+    def __str__(self):
+        return f"Unit {self.unit} - Lesson {self.lesson}: {self.quiz.title}"
