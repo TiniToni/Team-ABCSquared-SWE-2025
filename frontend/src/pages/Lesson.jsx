@@ -2,8 +2,11 @@ import React, { useContext, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { UserContext } from '../context/UserContext.jsx';
 import { VIDEO_IDS } from '../config/lessonVideos.js';
+import "./Lesson.css";
 
-const TOTAL_LESSONS = 9;export default function Lesson() {
+const TOTAL_LESSONS = 9;
+
+export default function Lesson() {
 	const { id } = useParams();
 	const lessonId = Number(id) || 1;
 	const navigate = useNavigate();
@@ -19,42 +22,39 @@ const TOTAL_LESSONS = 9;export default function Lesson() {
 
 	const percent = Math.round((lessonId / TOTAL_LESSONS) * 100);
 
-	function goToQuiz() {
-		navigate(`/quiz/${lessonId}`);
-	}
-
-	function goNextLesson() {
-		const next = Math.min(TOTAL_LESSONS, lessonId + 1);
-		navigate(`/lesson/${next}`);
-	}
+	function goToQuiz() { navigate(`/quiz/${lessonId}`); }
+	function goNextLesson() { navigate(`/lesson/${Math.min(TOTAL_LESSONS, lessonId + 1)}`); }
+	function goPrevLesson() { navigate(`/lesson/${Math.max(1, lessonId - 1)}`); }
 
 	return (
-		<div style={{ padding: 16 }}>
-			<div style={{ marginBottom: 12 }}>
-				<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-					<div>Lesson {lessonId} / {TOTAL_LESSONS}</div>
-					<div style={{ width: 300, background: '#eee', height: 12, borderRadius: 6 }}>
-						<div style={{ width: `${percent}%`, height: 12, background: '#4caf50', borderRadius: 6 }} />
-					</div>
+		<div className="lesson-wrapper">
+
+			<div className="progress-container">
+				<div className="progress-label">
+					<h3>Lesson {lessonId} / {TOTAL_LESSONS}</h3>
+				</div>
+				<div className="progress-bar">
+					<div className="progress-fill" style={{ width: `${percent}%` }}></div>
 				</div>
 			</div>
 
-			<div style={{ maxWidth: 900, margin: '0 auto' }}>
-				<div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+			<div className="video-box">
+
+				<div className="video-container">
 					<iframe
 						title={`lesson-video-${lessonId}`}
 						src={`https://www.youtube.com/embed/${videoId}`}
-						style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-						frameBorder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen
 					/>
 				</div>
 
-				<div style={{ marginTop: 16, display: 'flex', gap: 8 }}>
-					<button onClick={goToQuiz} style={{ padding: '8px 12px' }}>Take Quiz</button>
-					<button onClick={goNextLesson} style={{ padding: '8px 12px' }}>Next Lesson</button>
+				<div className="button-row">
+					<button className="nav-btn left" onClick={goPrevLesson}>Previous Lesson</button>
+					<button className="quiz-btn" onClick={goToQuiz}>Take Quiz</button>
+					<button className="nav-btn right" onClick={goNextLesson}>Next Lesson</button>
 				</div>
+
 			</div>
 		</div>
 	);

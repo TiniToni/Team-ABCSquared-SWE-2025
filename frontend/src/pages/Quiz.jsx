@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getQuizForLesson, submitQuiz } from '../Api.js';
 import { UserContext } from '../context/UserContext.jsx';
+import "./Quiz.css";
 
 export default function Quiz() {
 	const { id } = useParams();
@@ -63,37 +64,55 @@ export default function Quiz() {
 				markLessonComplete(lessonId);
 				const next = lessonId + 1;
 				if (next <= 9) navigate(`/lesson/${next}`);
-				else navigate('/');
+				else navigate('/dashboard');
 			});
 	}
 
-	if (loading) return <div style={{ padding: 16 }}>Loading quiz…</div>;
+	if (loading) return <div className="quiz-loading">Loading quiz…</div>;
 
 	return (
-		<div style={{ padding: 16 }}>
-			<h3>Quiz for Lesson {lessonId}</h3>
-			{quiz ? (
-				<form onSubmit={handleSubmit}>
-					<p>{quiz.question}</p>
-					<div>
-						{quiz.choices.map((c, i) => (
-							<div key={i} style={{ marginBottom: 8 }}>
-								<label>
-									<input type="radio" name="choice" checked={selected === i} onChange={() => setSelected(i)} /> {c}
+		<div className="quiz-page">
+			<div className="quiz-card">
+
+				<h3 className="quiz-title">Quiz for Lesson {lessonId}</h3>
+
+				{quiz ? (
+					<form onSubmit={handleSubmit} className="quiz-form">
+
+						{/* question */}
+						<p className="quiz-question">{quiz.question}</p>
+
+						{/*answer */}
+						<div className="quiz-choices">
+							{quiz.choices.map((c, i) => (
+								<label 
+									key={i}
+									className={`choice-option ${selected === i ? "selected" : ""}`}
+								>
+									<input 
+										type="radio" 
+										name="choice" 
+										checked={selected === i} 
+										onChange={() => setSelected(i)} 
+									/> 
+									<span>{c}</span>
 								</label>
-							</div>
-						))}
-					</div>
+							))}
+						</div>
 
-					{error && <div style={{ color: 'red' }}>{error}</div>}
+						{/* Error  */}
+						{error && <div className="quiz-error">{error}</div>}
 
-					<div style={{ marginTop: 12 }}>
-						<button type="submit" style={{ padding: '8px 12px' }}>Submit</button>
-					</div>
-				</form>
-			) : (
-				<div>No quiz available for this lesson.</div>
-			)}
+						{/*submit */}
+						<div className="submit-area">
+							<button type="submit" className="submit-btn">Submit</button>
+						</div>
+
+					</form>
+				) : (
+					<div>No quiz available for this lesson.</div>
+				)}
+			</div>
 		</div>
 	);
 }
