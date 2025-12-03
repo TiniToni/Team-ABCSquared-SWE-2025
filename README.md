@@ -25,3 +25,34 @@
    ```bash
    git clone https://github.com/yourusername/cheftamer.git
    cd cheftamer
+   ```
+
+2. **Install Dependencies**
+   ```install dependencies
+   pip install -r requirements.txt
+   ```
+
+3. **Setup environment variables**
+
+Create a .env file with necessary variables, for example:
+   ```
+   SECRET_KEY=your_django_secret_key
+   DATABASE_URL=postgres://username:password@localhost:5432/cheftamer
+   ```
+
+4. **Run Dev Server**
+   ```python manage.py migrate
+      python manage.py runserver
+   ```
+
+## Contributing
+
+- Fork the repository.
+
+- Create a new branch: git checkout -b feature/my-feature
+
+- Commit your changes: git commit -m "Add feature"
+
+- Push to your branch: git push origin feature/my-feature
+
+- Open a Pull Request on GitHub.
