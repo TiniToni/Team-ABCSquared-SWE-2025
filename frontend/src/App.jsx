@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import './App.css';
 
 function App() {
+
   return (
     <>
       <div className='header-container'> 
@@ -12,37 +13,23 @@ function App() {
 
         <nav className='navbar'>
           <div className='link-container'>
-            {(() => {
-              if (localStorage.getItem("access")) {
-                return <Link to="/dashboard">Home</Link>;
-              } else {
-                return <Link to="/">Home</Link>;
-              }
-            })()}
-
+            <Link to="/">Home</Link>
             <Link to="/login">Login</Link>
           </div>
 
-          <button
-            className='user-icon'
-            onClick={() => {
-              if (localStorage.getItem("access")) {
-                window.location.href = "/profile";
-              } else {
-                window.location.href = "/login";
-              }
-            }}
-          ></button>
+          <button className='user-icon'></button>
         </nav>
+
       </div>
 
+      {/*routes*/}
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<LoginUI />} />
         <Route path="/register" element={<CreateAccountUI />} />
       </Routes>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
