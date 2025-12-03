@@ -13,3 +13,11 @@ export const login = (data) => {
 export const refreshToken = (refresh) => {
   return axios.post(`${API_URL}/api/token/refresh/`, { refresh });
 };
+
+export const getQuizForLesson = (lessonId) => {
+  return axios.get(`${API_URL}/api/quizzes/${lessonId}/`);
+};
+
+export const submitQuiz = (lessonId, payload) => {
+  return axios.post(`${API_URL}/api/quizzes/${lessonId}/submit/`, payload);
+};
