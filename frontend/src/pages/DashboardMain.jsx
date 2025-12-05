@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./DashboardMain.css";
-
-// Import images
 import Illustration from "../assets/pixel-art-cheeseburger-seamless-background.png";
 import BaseCreature from "../assets/basecreature.png";
 import CreatureCook from "../assets/creaturecook.png";
 
 export default function DashboardMain() {
-  // Simple array of general safety tips
   const safetyTips = [
     "Always wash your hands before cooking.",
     "Keep raw meat separate from vegetables.",

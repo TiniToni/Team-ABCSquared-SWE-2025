@@ -22,11 +22,10 @@ export default function LoginUI() {
       const res = await login({ username, password });
 
       if (res.status === 200) {
-        // FIX: Use the correct key names that API.js expects
         localStorage.setItem("access_token", res.data.access);
         localStorage.setItem("refresh_token", res.data.refresh);
         
-        // Also store user info
+        
         localStorage.setItem("user", JSON.stringify({ username }));
 
         setUser({ username });

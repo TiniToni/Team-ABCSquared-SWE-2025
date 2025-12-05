@@ -30,7 +30,7 @@ export default function Quiz() {
         const quizData = res.data;
         setQuiz(quizData);
         
-        // Initialize selected answers object
+      
         const initialAnswers = {};
         if (quizData.questions) {
           quizData.questions.forEach(question => {
@@ -59,7 +59,7 @@ export default function Quiz() {
   }, [lessonId]);
 
   const handleSelectAnswer = (questionId, choiceId) => {
-    if (submissionResult) return; // Don't allow changes after submission
+    if (submissionResult) return; 
     
     setSelectedAnswers(prev => ({
       ...prev,
@@ -70,7 +70,7 @@ export default function Quiz() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Check if all questions are answered
+   
     const unansweredQuestions = Object.values(selectedAnswers).some(answer => answer === null);
     if (unansweredQuestions) {
       setError('Please answer all questions before submitting.');
@@ -81,20 +81,19 @@ export default function Quiz() {
     setIsSubmitting(true);
     
     try {
-      // Prepare answers as array of choice IDs
       const answers = Object.values(selectedAnswers);
       
-      // Submit to backend
+     
       const response = await submitQuiz(lessonId, answers);
       const result = response.data;
       
       setSubmissionResult(result);
       
-      // If passed, mark lesson as complete
+      
       if (result.passed) {
         markLessonComplete(lessonId);
         
-        // Auto-navigate to next lesson after 3 seconds
+        
         setTimeout(() => {
           const nextLesson = lessonId + 1;
           if (nextLesson <= 9) {
