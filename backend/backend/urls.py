@@ -1,3 +1,4 @@
+# urls.py - Add the mark-complete endpoint
 from django.contrib import admin
 from django.urls import path, include
 from authentication.views import CreateUserView, HomeView, LogoutView
@@ -12,10 +13,15 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),
     path('home/', HomeView.as_view(), name='home'),
     path('logout/', LogoutView.as_view(), name ='logout'),
+    
+    # Quiz endpoints
     path('api/quizzes/', QuizViewSet.as_view({'get': 'list'}), name='quiz_list'),
     path('api/quizzes/progress/', QuizViewSet.as_view({'get': 'progress'}), name='quiz_progress'),
     path('api/quizzes/<int:pk>/', QuizViewSet.as_view({'get': 'retrieve'}), name='quiz_detail'),
     path('api/quizzes/<int:pk>/submit/', QuizViewSet.as_view({'post': 'submit'}), name='quiz_submit'),
+    path('api/quizzes/mark-complete/', QuizViewSet.as_view({'post': 'mark_complete'}), name='mark_complete'),
+    
+    # Submission endpoints
     path('api/submissions/', QuizSubmissionViewSet.as_view({'get': 'list'}), name='submission_list'),
     path('api/submissions/<int:pk>/', QuizSubmissionViewSet.as_view({'get': 'retrieve'}), name='submission_detail'),
 ]

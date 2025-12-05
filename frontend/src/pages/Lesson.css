@@ -16,6 +16,7 @@
 .progress-label {
   font-size: 18px;
   margin-bottom: 6px;
+  color: black;
 }
 
 .progress-bar {
@@ -100,4 +101,53 @@
 .quiz-btn:hover,
 .nav-btn:hover {
   filter: brightness(1.1);
+}
+
+/* Add these to your existing Lesson.css */
+
+.access-error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.completed-badge {
+  background: #4caf50;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.locked-lesson {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f5f5f5;
+  border-radius: 12px;
+}
+
+.lock-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.locked-lesson h3 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.locked-lesson p {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
 }

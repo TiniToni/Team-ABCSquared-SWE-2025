@@ -107,10 +107,3 @@
   margin-top: 4px;
 }
 
-@media (max-width: 480px) {
-  .ct-login-box {
-    width: 92%;
-    padding: 20px;
-  }
-}
-
