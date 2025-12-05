@@ -22,15 +22,17 @@ export default function LoginUI() {
       const res = await login({ username, password });
 
       if (res.status === 200) {
-        localStorage.setItem("access", res.data.access);
-        localStorage.setItem("refresh", res.data.refresh);
+        // FIX: Use the correct key names that API.js expects
+        localStorage.setItem("access_token", res.data.access);
+        localStorage.setItem("refresh_token", res.data.refresh);
+        
+        // Also store user info
+        localStorage.setItem("user", JSON.stringify({ username }));
 
         setUser({ username });
 
-        
         setSuccess(`Successfully logged in as ${username}!`);
 
-        
         setTimeout(() => navigate("/dashboard"), 1200);
       } else {
         setError("Login failed");
@@ -47,7 +49,6 @@ export default function LoginUI() {
   return (
     <div className="ct-login-page">
       <div className="ct-login-box">
-
         <h2 className="ct-login-heading">Welcome!</h2>
         <p className="ct-login-subtext">Sign in to continue</p>
 
@@ -82,7 +83,6 @@ export default function LoginUI() {
 
         <div className="ct-create-section">
           <p className="ct-create-text">Don't have an account?</p>
-
           <button
             className="ct-button ct-create-btn"
             onClick={() => navigate("/register")}
@@ -94,7 +94,3 @@ export default function LoginUI() {
     </div>
   );
 }
-
-
-
-
